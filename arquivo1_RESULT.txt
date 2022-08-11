@@ -1,0 +1,8 @@
+abbabbabb: pertence
+abababb: não pertence
+bbabbaaab: não pertence
+abbabbabbbb: pertence
+abbabbabb: pertence
+aaaa: não pertence
+bbbbbbbb: pertence
+cabbabb: não pertence
