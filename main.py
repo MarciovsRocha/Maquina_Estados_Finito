@@ -25,11 +25,13 @@ def VerificaArquivo(FilePath: str, expor_result: bool = True):
     FileLines = LoadFile(FilePath)
     index = 1
     result=[]
+    print(f'Arquivo: {FilePath}\n')
     while (int(FileLines[0])+1) > index:
-        result.append('{}: {}\n'.format(
-            FileLines[index],
+        string='{}: {}\n'.format(
+            FileLines[index], 
             'pertence' if StringValida(FileLines[index]) else 'não pertence')
-        )
+        result.append(string)
+        print(string,end='\n')
         index+=1
     SaveResult(FilePath, result)
     return result
@@ -41,5 +43,9 @@ def SaveResult(FileName: str, Lines):
     File = open(FileName, 'w')
     File.writelines(Lines)
     File.close()
+    print('Resultado de análise do arquivo "{}" exportado para o arquivo: "{}"'.format(
+        FileName.replace('_RESULT.txt', '.txt'),
+        FileName
+    ))
 
 validacao_arquivo1 = VerificaArquivo('arquivo1.txt')
